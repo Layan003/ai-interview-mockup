@@ -1,17 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  --color-mint-500: oklch(0.72 0.11 178);
   --breakpoint-3xl: 120rem;
-  --color-black: #0a0a0a;
-  --color-white: #fff
+  --color-black: #000;
+  --color-white-100: #F4F0ED;
+  --color-white: #FFF;
+  --color-blue: #0066ff;
+  /* --color-primary: #9BC4CB; */
+  --color-primary: #4C5760;
+  /* --color-secondary: #CFEBDF; */
+  --color-secondary: #93A8AC;
+
+  --color-primary-hover: #7A9A9F;
 }
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  background-color: var(--color-white);
+  letter-spacing: 0.5px;
+  background-color: var(--color-gray-200);
   color: var(--color-black);
 
   font-synthesis: none;
@@ -21,3 +29,6 @@
 }
 
 
+.questions-container:last-child {
+  border-radius: 10px;
+}
