@@ -40,7 +40,10 @@ export default function Interview() {
     useLegacyResults: false,
   });
 
-  if (error) return <p>Web Speech API is not available in this browser</p>;
+  // useEffect(() => {
+  // if (error) return <p>Web Speech API is not available in this browser</p>;
+
+  // }, [])
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -185,7 +188,7 @@ export default function Interview() {
       <Navbar />
       <div className="py-6 px-15 flex flex-col md:flex-row md:justify-center lg:w-[70%] lg:m-auto gap-4 md:gap-8">
         <div>
-          <div className="w-auto h-auto bg-black m-auto rounded-md shadow-lg overflow-hidden">
+          <div className="my-2 w-[350px] h-[250px] bg-black m-auto rounded-md shadow-lg overflow-hidden">
             <Webcam mirrored={true} classID="rounded-md" />
           </div>
           {isRecording ? (
@@ -214,13 +217,17 @@ export default function Interview() {
               <p className="font-semibold">start recording</p>
             </div>
           )}
+          <div className="bg-amber-100 border border-amber-400 rounded-lg p-2 w-fit my-3 mx-auto flex items-center gap-3">
+            <img src="/lightbulb.svg" alt="" width={20} />
+            <p className="text-amber-700 text-sm">Ensure that microphone access is enabled</p>
+          </div>
           {userAnswer && (
-            <div className="bg-white p-3 rounded-lg shadow-md flex justify-between items-start my-5">
+            <div className="bg-white p-3 rounded-lg shadow-md flex justify-between items-start my-5  max-w-[550px]">
               <div className="flex-5/6">
                 {isEditAnswer ? (
                   <div>
                     <textarea
-                      className="border-1 border-gray-500 rounded-lg p-2 min-h-[100px] w-[100%]"
+                      className="border-1 border-gray-500 rounded-lg p-2 min-h-[100px] w-[100%] "
                       type="text"
                       value={editAnswer}
                       ref={inputRef}

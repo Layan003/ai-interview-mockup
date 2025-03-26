@@ -16,7 +16,7 @@ function App() {
         <Route path='/login' element={<AuthForm method='login'/>} />
         <Route path='/register' element={<AuthForm method='register'/>} />
         <Route path='/' element={<ProtectedRoute><Home/></ProtectedRoute>} />
-        <Route path='/interview/:id' element={<ProtectedRoute><Interview/></ProtectedRoute>} />
+        <Route path='/interview/:id' element={<Interview/>} />
         <Route path='/interview/:id/feedback/' element={<ProtectedRoute><Feedback/></ProtectedRoute>} />
         
         <Route path='*' element={<NotFound/>} />

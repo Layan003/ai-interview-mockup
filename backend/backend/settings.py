@@ -13,7 +13,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 from datetime import timedelta
 from corsheaders.defaults import default_headers
+import os 
+from dotenv import load_dotenv
 
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -48,10 +51,10 @@ INSTALLED_APPS = [
     'interview',
     'users',
     'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.google',
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.google',
 
 ]
 
@@ -65,7 +68,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware', #
+    # 'allauth.account.middleware.AccountMiddleware', #
 ]
 
 
@@ -138,14 +141,14 @@ SIMPLE_JWT = {
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOWS_CREDENTIALS = True
 
-CORS_ALLOW_HEADERS = list(default_headers) + [
-    "x-google-access-token",  
-]
+# CORS_ALLOW_HEADERS = list(default_headers) + [
+#     "x-google-access-token",  
+# ]
 
-AUTHENTICATION_BACKENDS = (
-    "django.contrib.auth.backends.ModelBackend",
-    "allauth.account.auth_backends.AuthenticationBackend",
-)
+# AUTHENTICATION_BACKENDS = (
+#     "django.contrib.auth.backends.ModelBackend",
+#     "allauth.account.auth_backends.AuthenticationBackend",
+# )
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
@@ -170,20 +173,20 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-LOGIN_REDIRECT_URL = '/callback/'
+# LOGIN_REDIRECT_URL = '/callback/'
 # LOGOUT_REDIRECT_URL = '/'
 
 
-SOCIALACCOUNT_PROVIDERS = {
-    "google": {
-        "SCOPE": [
-            "profile",
-            "email"
-        ],
-        "AUTH_PARAMS": {"access_type": "online"},
-        'OAUTH_PKCE_ENABLED': True,
-        'FETCH_USERINFO': True,
-    }
-}
+# SOCIALACCOUNT_PROVIDERS = {
+#     "google": {
+#         "SCOPE": [
+#             "profile",
+#             "email"
+#         ],
+#         "AUTH_PARAMS": {"access_type": "online"},
+#         'OAUTH_PKCE_ENABLED': True,
+#         'FETCH_USERINFO': True,
+#     }
+# }
 
-SOCIALACCOUNT_STORE_TOKENS = True
+# SOCIALACCOUNT_STORE_TOKENS = True

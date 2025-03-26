@@ -6,7 +6,7 @@ class Interview(models.Model):
     job_position = models.CharField(max_length=100)
     job_description = models.CharField(max_length=250)
     job_experience = models.PositiveIntegerField(default=0)
-    json_response = models.CharField(max_length=30000, blank=True, null=True)
+    json_response = models.TextField(max_length=10000, blank=True, null=True)
     user = models.ForeignKey(User, related_name='interviews', on_delete=models.CASCADE, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
