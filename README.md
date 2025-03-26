@@ -20,7 +20,7 @@ AI Interview Mockup is a website that helps users prepare for job interviews. Us
 ![Demo GIF](./assets/1.gif)
 - *Entering job details.*
 ![Demo GIF](./assets/2.gif)
-- *Interview starts with the first question.*
+- *The interview begins with the first question. The black box represents the camera (if enabled).*
 ![Demo GIF](./assets/3.jpg)
 - *Start recording the answer.*
 ![Demo GIF](./assets/4.gif)
